@@ -172,12 +172,17 @@ class ConfirmedCasesSliverWidget extends StatelessWidget {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
-          return Container(child: ListView(children: _mapTolistItems(caseMap)));
+          return Container(
+              child: ListView(
+              shrinkWrap: true,
+              children: _mapTolistItems(caseMap)));
         });
   }
 
   List<Widget> _mapTolistItems(Map<String, int> map) {
     List<Widget> items = List();
+    map.removeWhere((key,value) => key == null);
+
     final sortedMap = SplayTreeMap.from(
         map, (a, b) => map[b].compareTo(map[a]));
 

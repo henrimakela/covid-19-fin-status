@@ -21,7 +21,7 @@ dependencies:
     sdk: flutter
   rxdart:
   http:
-  sqflite: any
+  sqflite: 1.3.0
   path_provider: any
   font_awesome_flutter: 8.0.1
   provider: 4.0.4
